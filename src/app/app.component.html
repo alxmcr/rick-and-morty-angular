@@ -1,20 +1,13 @@
-<section id="authentication">
-  <h1>Autentiquemonos en Github 😉</h1>
-  <form class="form" #form="ngForm" (ngSubmit)="login(form.value)">
-    <div>
-      <label for="username">Añade un nombre:
-        <input class="form__field" id="username" type="text" placeholder="Añade el nombre de usuario ..." required
-          name="username" [(ngModel)]="model.username" />
-      </label>
+<h1 class="main-title">The Rick and Morty API</h1>
+<section class="character-list" *ngIf="responseList !== null || responseList !== undefined">
+  <!-- <pre>{{ responseList | json }}</pre> -->
+  <div class="character-card" *ngFor="let character of responseList">
+    <img class="character-image"
+      src="{{character.image}}"
+      alt="{{character.name}}">
+    <div class="character-body">
+      <span class="character-name">{{character.name}}</span>
+      <span class="character-species">{{character.species}}</span>
     </div>
-    <button type='submit'>Enviar!!</button>
-  </form>
-  <p class="label">Form: {{ model | json }} </p>
-</section>
-<section *ngIf="responseList">
-  <h2>Titulo sdfs </h2>
-  {{ responseList | json }}
-
-  <img [src]="responseList.avatar_url" />
-
+  </div>
 </section>

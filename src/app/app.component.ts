@@ -1,5 +1,5 @@
 import { Component, VERSION } from '@angular/core';
-import { ListService } from './list.service';
+import { CharacterService } from './character.service';
 
 interface Model {
   username: string;
@@ -18,15 +18,20 @@ export class AppComponent  {
   responseList;
 
   constructor(
-    private listService: ListService
+    private characterService: CharacterService
   ){}
 
-  login(form: any): void {
-    this.model = form;
-    const username = this.model['username'];
-    this.listService.getApi(username)
+  ngOnInit() { this.listCharacter(); }
+
+  listCharacter(): void {
+    this.characterService.getApi()
     .subscribe(
-      response => (this.responseList = response)
+      (response :any) => {
+        // console.log(typeof response);
+        console.log(response);
+        // console.log(response.toJSON());
+        this.responseList = response.results
+      }
     );
   }
 }

@@ -1,0 +1,59 @@
+.character-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    row-gap: 10px;
+    column-gap: 55px;
+    margin: 0 auto;
+}
+
+.character-card {
+    background-color: indigo;
+    border-radius: 5px;
+    box-shadow: 2px 2px darkgray;
+    align-items: center;
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    width: 100%;
+}
+
+.character-card:hover {
+    background-color: black;
+}
+
+.character-body {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+}
+
+.character-body > span {
+    text-align: center;
+}
+
+.character-name {
+    color: white;
+    padding: 5px;
+}
+
+.character-species {
+    background-color: goldenrod;
+    border-radius: 10px;
+    color: black;
+    padding: 5px;
+}
+
+.character-image {
+    background-size: cover;
+    border-radius: 5px;
+    width: 70%;
+}
+
+.character-name{
+    font-size: 1.5rem;
+}
+
+.main-title {
+    text-align: center;
+}
